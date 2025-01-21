@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { clsx } from "clsx";
 
-export function H1(props: { className: string; children: ReactNode }) {
+export function H1(props: { className?: string; children?: ReactNode }) {
   return (
     <h1
       className={clsx(
@@ -14,7 +14,7 @@ export function H1(props: { className: string; children: ReactNode }) {
   );
 }
 
-export function H2(props: { className: string; children: ReactNode }) {
+export function H2(props: { className?: string; children?: ReactNode }) {
   return (
     <h1
       className={clsx(
@@ -27,7 +27,7 @@ export function H2(props: { className: string; children: ReactNode }) {
   );
 }
 
-export function H3(props: { className: string; children: ReactNode }) {
+export function H3(props: { className?: string; children?: ReactNode }) {
   return (
     <h1
       className={clsx(
