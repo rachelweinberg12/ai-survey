@@ -1,14 +1,28 @@
+import { InputOverlapLabel } from "@/components/input";
 import { login, signup } from "./actions";
+import { Button } from "@/components/button";
 
 export default function LoginPage() {
   return (
-    <form>
-      <label htmlFor="email">Email:</label>
-      <input id="email" name="email" type="email" required />
-      <label htmlFor="password">Password:</label>
-      <input id="password" name="password" type="password" required />
-      <button formAction={login}>Log in</button>
-      <button formAction={signup}>Sign up</button>
+    <form className="flex flex-col gap-3">
+      <InputOverlapLabel
+        id="email"
+        name="email"
+        type="email"
+        label="Email"
+        required
+      />
+      <InputOverlapLabel
+        id="password"
+        name="password"
+        type="password"
+        label="Password"
+        required
+      />
+      <div className="flex justify-between">
+        <Button formAction={login}>Log in</Button>
+        <Button formAction={signup}>Sign up</Button>
+      </div>
     </form>
   );
 }
