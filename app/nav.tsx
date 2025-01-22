@@ -14,6 +14,7 @@ import {
   MagnifyingGlassIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { ChartBarIcon } from "@heroicons/react/24/solid";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,6 +23,7 @@ import { useState } from "react";
 type NavItem = {
   name: string;
   href: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
 };
 const navigation = [
@@ -50,7 +52,7 @@ export function MobileNav(props: { className?: string }) {
       >
         <DialogBackdrop
           transition
-          className="fixed inset-0 bg-gray-900/80 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"
+          className="fixed inset-0 bg-slate-900/80 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"
         />
 
         <div className="fixed inset-0 flex">
@@ -79,7 +81,7 @@ export function MobileNav(props: { className?: string }) {
         <button
           type="button"
           onClick={() => setSidebarOpen(true)}
-          className="-m-2.5 p-2.5 text-gray-400 lg:hidden"
+          className="-m-2.5 p-2.5 text-slate-400 lg:hidden"
         >
           <span className="sr-only">Open sidebar</span>
           <Bars3Icon aria-hidden="true" className="size-6" />
@@ -92,7 +94,7 @@ export function MobileNav(props: { className?: string }) {
           <img
             alt=""
             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            className="size-8 rounded-full bg-gray-800"
+            className="size-8 rounded-full bg-slate-800"
           />
         </a>
       </div>
@@ -104,16 +106,12 @@ export function SideBar(props: { className?: string }) {
   return (
     <div
       className={clsx(
-        "flex grow flex-col gap-y-12 overflow-y-auto bg-slate-900 px-6",
+        "flex grow flex-col gap-y-12 overflow-y-auto bg-slate-900 p-6",
         props.className
       )}
     >
       <div className="flex h-16 shrink-0 items-center">
-        <img
-          alt="Your Company"
-          src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-          className="h-8 w-auto"
-        />
+        <ChartBarIcon className="h-12 w-auto text-matisse-400" />
       </div>
       <nav className="flex flex-1 flex-col mt-5">
         <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -145,12 +143,12 @@ function SideBarItem(props: { navItem: NavItem }) {
         href={navItem.href}
         className={clsx(
           isCurrentPage
-            ? "bg-gray-800 text-white"
-            : "text-gray-400 hover:bg-gray-800 hover:text-white",
+            ? "bg-slate-800 text-white"
+            : "text-slate-400 hover:bg-slate-800 hover:text-white",
           "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
         )}
       >
-        <navItem.icon aria-hidden="true" className="size-6 shrink-0" />
+        <navItem.icon aria-hidden="true" className="size-6 shrink-0 stroke-2" />
         {navItem.name}
       </a>
     </li>
