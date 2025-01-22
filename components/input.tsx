@@ -12,7 +12,7 @@ export const InputOverlapLabel = forwardRef(
   ) => {
     const { label, error, errorMessage, className, id, ...rest } = props;
     return (
-      <div>
+      <div className="relative">
         <label
           htmlFor={id}
           className="absolute -top-2 left-2 inline-block rounded-lg bg-matisse-50 dark:bg-matisse-900 px-1 text-xs font-medium text-slate-900 dark:text-slate-50"
