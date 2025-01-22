@@ -1,6 +1,6 @@
-import { InputOverlapLabel } from "@/components/input";
+import InputOverlapLabel from "@/components/input";
 import { login, signup } from "./actions";
-import { Button } from "@/components/button";
+import Button from "@/components/button";
 
 export default function LoginPage() {
   return (

@@ -29,22 +29,33 @@ export function buttonClass(size: SizeType, role?: RoleType) {
   );
 }
 
-export const Button = forwardRef(function Button(
-  props: {
-    size?: SizeType;
-    role?: RoleType;
-    children: ReactNode;
-  } & JSX.IntrinsicElements["button"],
-  ref: Ref<HTMLButtonElement>
-) {
-  const { size = "md", role = "primary", children, className, ...rest } = props;
-  return (
-    <button
-      ref={ref}
-      className={clsx(buttonClass(size, role), className)}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-});
+const Button = forwardRef(
+  (
+    props: {
+      size?: SizeType;
+      role?: RoleType;
+      children: ReactNode;
+    } & JSX.IntrinsicElements["button"],
+    ref: Ref<HTMLButtonElement>
+  ) => {
+    const {
+      size = "md",
+      role = "primary",
+      children,
+      className,
+      ...rest
+    } = props;
+    return (
+      <button
+        ref={ref}
+        className={clsx(buttonClass(size, role), className)}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+);
+
+Button.displayName = "Button";
+export default Button;
