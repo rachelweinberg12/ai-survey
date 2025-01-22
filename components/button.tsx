@@ -25,7 +25,7 @@ export function buttonClass(size: SizeType, role?: RoleType) {
     role === "soft" &&
       "rounded bg-matisse-100 px-2 py-1 text-xs font-semibold text-matisse-600 shadow-sm hover:bg-matisse-200",
     role === "highlight" &&
-      "rounded bg-gradient-to-r bg-from-matisse-950 bg-via-matisse-500 bg-to-sage-200 text-white"
+      "rounded bg-gradient-to-r from-matisse-950 via-matisse-500 to-sage-300 text-white hover:via-matisse-700 hover:to-sage-500"
   );
 }
 
